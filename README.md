@@ -1,4 +1,4 @@
-# 🚀 Wsender PRO
+# 🚀 Wsender
 
 **Automated WhatsApp Bulk Sender - Offline & No License Required**
 
@@ -253,7 +253,7 @@ This tool is for educational and personal use only. Use responsibly and respect 
 
 ## 👨‍💻 Credits
 
-**Created by:** Wildan  
+**Created by:** Wildanpics  
 **Version:** 1.0  
 **Year:** 2025
 
@@ -291,3 +291,4 @@ If you encounter any issues or have questions:
 If this project helped you, please consider giving it a ⭐!
 
 </div>
+
