@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wsender PRO</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Wsender PRO</h1>
+            <span class="badge">Offline</span>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn" data-tab="csv">CSV Upload</button>
+            <button class="tab-btn active" data-tab="manual">Manual Input</button>
+        </div>
+
+        <!-- CSV TAB -->
+        <div id="tab-csv" class="tab-content">
+            <div class="card">
+                <div class="input-group">
+                    <label>1. Upload CSV List</label>
+                    <input type="file" id="csvFile" accept=".csv">
+                    <label for="csvFile" class="file-upload-label">
+                        <div class="file-upload-icon">📁</div>
+                        <div class="file-upload-text">Choose CSV File</div>
+                        <div class="file-upload-hint">Click to browse</div>
+                    </label>
+                    <div id="csvFileName" class="file-name-display" style="display:none;"></div>
+                    <small>Format: phone,name,file</small>
+                </div>
+                <div class="input-group">
+                    <label>2. Attachments ZIP (Optional)</label>
+                    <input type="file" id="zipFile" accept=".zip">
+                    <label for="zipFile" class="file-upload-label">
+                        <div class="file-upload-icon">📦</div>
+                        <div class="file-upload-text">Choose ZIP File</div>
+                        <div class="file-upload-hint">Optional attachments</div>
+                    </label>
+                    <div id="zipFileName" class="file-name-display" style="display:none;"></div>
+                </div>
+                <div class="input-group">
+                    <label for="messageTemplate">3. Message Template</label>
+                    <textarea id="messageTemplate" rows="3" placeholder="Hello {name}..."></textarea>
+                    <div class="variables">Available: <span class="tag">{name}</span></div>
+                    <button id="btnAddToQueueCsv" class="btn secondary small-btn" style="margin-top:8px">Load to
+                        Queue</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MANUAL TAB -->
+        <div id="tab-manual" class="tab-content active">
+            <div class="card">
+                <div class="input-group">
+                    <label>Phone Number (with country code)</label>
+                    <input type="text" id="manualPhone" placeholder="e.g. 62812345678">
+                </div>
+                <div class="input-group">
+                    <label>Message</label>
+                    <textarea id="manualMsg" rows="3" placeholder="Type your message..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label>Attachment (Optional)</label>
+                    <input type="file" id="manualFile">
+                    <label for="manualFile" class="file-upload-label">
+                        <div class="file-upload-icon">📎</div>
+                        <div class="file-upload-text">Choose File</div>
+                        <div class="file-upload-hint">Image, Video, or Document</div>
+                    </label>
+                    <div id="manualFileName" class="file-name-display" style="display:none;"></div>
+                </div>
+                <button id="btnAddManual" class="btn secondary full-width">Add to Queue (+)</button>
+            </div>
+        </div>
+
+        <!-- QUEUE LIST -->
+        <div class="queue-section">
+            <h3>Queue (<span id="queueCount">0</span>)</h3>
+            <div class="queue-list" id="queueList">
+                <div class="empty-state">Queue is empty</div>
+            </div>
+            <button id="btnClearQueue" class="text-btn">Clear Queue</button>
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="card" style="margin-top: 16px;">
+            <div class="row">
+                <div class="input-group col">
+                    <label>Min Delay (s)</label>
+                    <input type="number" id="minDelay" value="5" min="3">
+                </div>
+                <div class="input-group col">
+                    <label>Max Delay (s)</label>
+                    <input type="number" id="maxDelay" value="10" min="5">
+                </div>
+            </div>
+        </div>
+
+        <div class="status-bar" id="statusBar">
+            Ready
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="progress-text" id="progressText">0 / 0</div>
+
+        <div class="controls">
+            <button id="btnStart" class="btn primary">Start Sending</button>
+            <button id="btnPause" class="btn secondary hidden">Pause</button>
+            <button id="btnResume" class="btn secondary hidden">Resume</button>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="creator">
+                <span class="creator-label">Created by</span>
+                <span class="creator-name">Wildan</span>
+            </div>
+            <div class="version">v1.0</div>
+        </div>
+    </div>
+
+    <script src="zip.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>
