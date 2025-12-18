@@ -192,7 +192,7 @@ This tool is for educational and personal use only. Use responsibly and respect 
 - Always get consent before sending bulk messages
 ---
 ## 👨‍💻 Credits
-**Created by:** Wildan  
+**Created by:** Wildanpics  
 **Version:** 1.0  
 **Year:** 2025
 ---
